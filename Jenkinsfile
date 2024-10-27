@@ -3,10 +3,15 @@ pipeline {
     stages {
         
         stage('Build Docker Image') {
-            steps {
+            steps { 
+             withCredentials([usernamePassword(credentialsId: 'Docker_Hub', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')])
                 script {
                     // Build the Docker image
-                    sh "docker build -t react-app:latest ."
+                   
+                    sh "docker login -u $USERNAME -p $PASSWORD"
+                    sh "docker build -t abdo97/react-app:latest ."
+                    sh "docker push abdo97/react-app:latest"
+
                 }
             }
         }
