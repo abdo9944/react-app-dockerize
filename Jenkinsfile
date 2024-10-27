@@ -8,10 +8,11 @@ pipeline {
                 script {
                     // Build the Docker image
                    
-                    sh "docker login -u $USERNAME -p $PASSWORD"
-                    sh "docker build -t abdo97/react-app:latest ."
-                    sh "docker push abdo97/react-app:latest"
-
+             sh  """
+                    docker login -u $USERNAME -p $PASSWORD
+                    docker build -t abdo97/react-app:latest .
+                    docker push abdo97/react-app:latest
+                 """
                 }
             }
         }
