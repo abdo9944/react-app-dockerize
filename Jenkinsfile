@@ -4,7 +4,7 @@ pipeline {
         
         stage('Build Docker Image') {
             steps { 
-                script { withCredentials([usernamePassword(credentialsId: 'Docker-Hub', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')])
+                script { withCredentials([usernamePassword(credentialsId: 'Docker_Hub', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')])
                     // Build the Docker image
                    
              sh  """
