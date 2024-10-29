@@ -9,7 +9,7 @@ pipeline {
                     // Build the Docker image
                    
                     { sh  """
-                    docker login -u $(DOCKER_USERNAME) -p $(DOCKER_PASSWORD)
+                    docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
                     docker build -t abdo97/react-app:latest .
                     docker push abdo97/react-app:latest
              """
