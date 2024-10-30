@@ -1,5 +1,5 @@
 pipeline {
-    agent any 
+   agent { label 'abdo-ec2' } 
     stages {
         
         stage('Build Docker Image') {
